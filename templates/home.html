@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<!--Changes the title according to page-->
+{% block title %}Home{% endblock %}
+
+<!-- After login to add these URL in navigation bar-->
+{% block afterloginnavbar %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link " aria-current="page" href="{% url 'logout' %}">Logout</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'password_change' %}">password change</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'password_reset' %}">password reset</a>
+  </li>
+  {% endif %}
+{% endblock %}
+
+<!--For main content of the page (dashbord and all)-->
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}
