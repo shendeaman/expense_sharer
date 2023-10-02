@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.views.generic.base import TemplateView 
+from register import views as register_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("accounts/",include("django.contrib.auth.urls")),
+    path("/",include("django.contrib.auth.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path('register/', register_view.sign_up, name='register')
+
 ]
