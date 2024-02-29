@@ -1,0 +1,6 @@
+Use TestDB;
+Delete from dbo.Groups;
+DBCC CHECKIDENT ('dbo.Groups', RESEED, 0);
+
+Use TestDB;
+create table ExpenseSharer (expenseName varchar(30) not null, expenseAmount int not null, whopaid varchar(30) not null, amountOwedByOthers varchar(50) not null, groupid int foreign key references dbo.Groups(groupid));

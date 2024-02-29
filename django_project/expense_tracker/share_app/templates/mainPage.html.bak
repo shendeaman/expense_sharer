@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+
+<title>{% block title %}Groups data{% endblock %}</title>  
+
+{% block content %}
+	
+	<p style="font-family:cursive; font-size:25px">Welcome to our application. You can start by creating a group first. Once done add expenses for the respective groups.</p>
+	
+		
+{% endblock %}
+

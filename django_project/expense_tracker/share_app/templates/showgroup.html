@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+
+<title>{% block title %}Groups data{% endblock %}</title>  
+
+{% block content %}
+	<ul>
+		{% for ele in table_data %}
+				<li>{{ele}}</li>
+		{% endfor %}
+	</ul>
+		
+{% endblock %}

@@ -1,0 +1,3 @@
+Use TestDB;
+Delete from dbo.Groups;
+DBCC CHECKIDENT ('dbo.Groups', RESEED, 0);
